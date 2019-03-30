@@ -1,0 +1,25 @@
+<app-header class="principal">
+
+  <form class="formulario">
+    <label for="nome">Nome:</label>
+    <ion-input type="text" name="nome" id="nome" placeholder="Digite seu nome"></ion-input>
+
+    <label for="telefone">Telefone:</label>
+    <ion-input type="text" name="telefone" id="telefone" placeholder="Digite seu telefone"></ion-input>
+
+    <label for="email">Email:</label>
+    <ion-input type="text" name="email" id="email" placeholder="Digite seu email"></ion-input>
+
+    <label for="foto">Foto:</label>
+    <ion-button class="btnfoto" type="button">Tirar Foto</ion-button>
+
+    <div class="botao">
+      <ion-button color="success" type="submit">Salvar</ion-button>
+      <ion-button color="danger" (click)="voltar()" >Cancelar</ion-button>
+    </div>
+
+  </form>
+
+
+
+</app-header>

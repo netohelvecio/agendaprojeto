@@ -1,0 +1,23 @@
+
+.imagem{
+    width: 150px;
+    display: flex;
+    margin: 5em auto;
+    
+    img{
+        max-width: 100%;
+    }
+    
+}
+
+.butao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    ion-button{
+        width: 10em;
+        margin: 1em;
+    }
+    
+}

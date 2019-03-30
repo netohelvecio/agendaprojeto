@@ -1,0 +1,25 @@
+.header{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .cabeca{
+        min-height: 0px;
+        display: flex;
+        padding: 0 1em;
+        width: 100%;
+        background-color: #0000FF; 
+
+        h3{
+            flex-grow: 1;
+            font-weight: bold;
+            color: #FFFFFF;
+            font-family: 'Indie Flower', cursive;
+        }
+    }
+
+    .principal{
+        width: 100%;
+    }
+}
