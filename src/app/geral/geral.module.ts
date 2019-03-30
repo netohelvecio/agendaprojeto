@@ -23,7 +23,8 @@ import { CardComponent } from './card/card.component';
     CommonModule,
     IonicModule,
     FormsModule,
-    HeaderComponent
+    HeaderComponent,
+    CardComponent
   ]
 })
 export class GeralModule { }
