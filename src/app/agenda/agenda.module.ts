@@ -6,18 +6,22 @@ import { GeralModule } from '../geral/geral.module';
 import { TelaprincipalComponent } from './telaprincipal/telaprincipal.component';
 import { TelacadastroComponent } from './telacadastro/telacadastro.component';
 import { TelalistaComponent } from './telalista/telalista.component';
+import { TelaeditarComponent } from './telaeditar/telaeditar.component';
+import { BrMaskerModule } from 'brmasker-ionic-3';
 
 @NgModule({
   declarations: [
     TelaprincipalComponent,
     TelacadastroComponent,
-    TelalistaComponent
+    TelalistaComponent,
+    TelaeditarComponent
   ],
 
   
   imports: [
     GeralModule,
-    AgendaRoutingModule
+    AgendaRoutingModule,
+    BrMaskerModule
   ]
 })
 export class AgendaModule { }

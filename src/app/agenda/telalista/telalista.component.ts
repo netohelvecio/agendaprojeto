@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AgendaService, Contato } from '../agenda.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-telalista',
@@ -6,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./telalista.component.scss'],
 })
 export class TelalistaComponent implements OnInit {
+  arr_contatos: Contato[] = [];
 
-  constructor() { }
+  constructor(
+    private agenda: AgendaService,
+    private router: Router
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.carregarContatos();
+  }
+
+  navegarEdicao(){
+    this.router.navigate(['agenda/editar']);
+  }
+
+  carregarContatos(){
+    this.arr_contatos = this.agenda.getContatos();
+  }
 
 }

@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CardComponent } from './card/card.component';
 
+
 @NgModule({
   declarations: [
     HeaderComponent,

@@ -16,13 +16,17 @@
             display: flex;
             margin-top: 8em;
 
+            .btn_ex{
+                --background: #FF0000; 
+            }
+
             .bt_can{
                 --background: #C0C0C0;
                 --color: #000000;
             }
 
-            ion-button,.bt_can{
-                margin: 2em auto;
+            ion-button, .btn_ex, .bt_can{
+                margin: 1em;
                 width: 10em;
             }
         }
