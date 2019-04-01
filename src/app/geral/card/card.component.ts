@@ -16,4 +16,8 @@ export class CardComponent implements OnInit {
 
   ngOnInit() {}
 
+  getNome(): string{
+    return this.nome;
+  }
+
 }

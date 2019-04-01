@@ -21,6 +21,7 @@ export class TelalistaComponent implements OnInit {
 
   navegarEdicao(){
     this.router.navigate(['agenda/editar']);
+
   }
 
   carregarContatos(){

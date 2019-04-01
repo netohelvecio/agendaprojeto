@@ -8,7 +8,7 @@ export class AgendaService {
   private arr_contatos: Contato[] = [];
 
   constructor() {
-    const temp = localStorage.getItem('contatos');
+    const temp = localStorage.getItem('contato');
     this.arr_contatos = temp ? JSON.parse(temp) : [];
   }
 
@@ -22,7 +22,11 @@ export class AgendaService {
   }
 
   private saveLocal(){
-    localStorage.setItem('candidatos',JSON.stringify(this.arr_contatos));
+    localStorage.setItem('contato',JSON.stringify(this.arr_contatos));
+  }
+
+  posContato(index): number{
+    return this.arr_contatos.indexOf(index);
   }
 }
 
