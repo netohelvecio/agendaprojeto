@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Location} from '@angular/common';
 import { AgendaService, Contato } from '../agenda.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-telacadastro',
@@ -12,7 +13,7 @@ export class TelacadastroComponent implements OnInit {
   contato: any = {};
   agenda: AgendaService;
 
-  constructor(private local:Location, agenda: AgendaService) {
+  constructor(private local:Location, agenda: AgendaService, public alertController: AlertController) {
     this.agenda = agenda;
   }
 
@@ -31,11 +32,9 @@ export class TelacadastroComponent implements OnInit {
         email: email_,
         imagem: 'https:picsum.photos/100/100?random',
       });
-
-      alert('Contato Cadastrado');
-      this.local.back();
+      this.presentAlert();
     }else{
-      alert("Preencha todos os campos")
+      this.camposVazios();
     }
   }
 
@@ -45,6 +44,34 @@ export class TelacadastroComponent implements OnInit {
 
   caputurarFoto(){
 
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Deseja fazer um novo cadastro?',
+      buttons: [{
+        text:'Sim',
+        handler: () => {
+          this.contato = {};
+        }
+      }, {
+        text:'Não',
+        handler: () => {
+          this.local.back();
+        }
+      }]
+    });
+
+    await alert.present();
+  }
+
+  async camposVazios() {
+    const alert = await this.alertController.create({
+      header: 'Preencha todos os campos',
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 
 }

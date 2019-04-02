@@ -25,7 +25,8 @@ import { CardComponent } from './card/card.component';
     IonicModule,
     FormsModule,
     HeaderComponent,
-    CardComponent
+    CardComponent,
+    RouterModule
   ]
 })
 export class GeralModule { }

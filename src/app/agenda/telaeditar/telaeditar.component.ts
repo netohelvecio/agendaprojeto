@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Location} from '@angular/common';
 import { AgendaService } from '../agenda.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-telaeditar',
@@ -9,9 +10,15 @@ import { AgendaService } from '../agenda.service';
 })
 export class TelaeditarComponent implements OnInit {
 
-  constructor(private local:Location, agenda: AgendaService) { }
+  index: any;
 
-  ngOnInit() {}
+  constructor(private local:Location, agenda: AgendaService, private rota: ActivatedRoute) { 
+
+  }
+
+  ngOnInit() {
+    this.index = this.rota.snapshot.paramMap.get('index');
+  }
 
   voltar(){
     this.local.back();

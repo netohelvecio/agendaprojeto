@@ -7,7 +7,7 @@ import { TelaprincipalComponent } from './telaprincipal/telaprincipal.component'
 import { TelacadastroComponent } from './telacadastro/telacadastro.component';
 import { TelalistaComponent } from './telalista/telalista.component';
 import { TelaeditarComponent } from './telaeditar/telaeditar.component';
-import { BrMaskerModule } from 'brmasker-ionic-3';
+import { BrMaskerModule } from 'br-mask';
 
 @NgModule({
   declarations: [
