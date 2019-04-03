@@ -12,6 +12,7 @@ export class TelacadastroComponent implements OnInit {
 
   contato: any = {};
   agenda: AgendaService;
+  evt: KeyboardEvent;
 
   constructor(private local:Location, agenda: AgendaService, private alertController: AlertController) {
     this.agenda = agenda;
@@ -32,7 +33,7 @@ export class TelacadastroComponent implements OnInit {
         nome: nome_,
         telefone: telefone_,
         email: email_,
-        imagem: 'https:picsum.photos/100/100?random',
+        imagem: 'https://api.adorable.io/avatars/100/' + id_ + '.png',
       });
       this.cadastroNovamente();
     }else{
@@ -75,5 +76,4 @@ export class TelacadastroComponent implements OnInit {
 
     await alert.present();
   }
-
 }

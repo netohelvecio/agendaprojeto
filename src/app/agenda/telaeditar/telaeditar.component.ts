@@ -51,7 +51,6 @@ export class TelaeditarComponent implements OnInit {
 
   excluir(formulario){
     let id_ = (formulario.value.id);
-
     this.excluirConfirma(id_);
   }
 
@@ -78,6 +77,15 @@ export class TelaeditarComponent implements OnInit {
     await alert.present();
   }
 
+  async contatoExcluidoStatus() {
+    const alert = await this.alertController.create({
+      header: 'Contato Excluido!',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
   voltar(){
     this.local.back();
   }
@@ -89,12 +97,11 @@ export class TelaeditarComponent implements OnInit {
         text:'Sim',
         handler: () => {
           this.agenda.excluirContato(id);
+          this.local.back();
+          this.contatoExcluidoStatus();
         }
       },{
-        text:'Não',
-        handler: () => {
-          this.local.back();
-        }
+        text:'Não'
       }]
     });
 

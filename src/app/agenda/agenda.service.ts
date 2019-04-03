@@ -33,11 +33,11 @@ export class AgendaService {
   }
 
   excluirContato(id){
-    //this.arr_contatos.splice(id);
-    //console.log(this.arr_contatos);
-    //localStorage.removeItem('contato[0]');
-    //let key = 'contato[' + id + ']';
-    //localStorage.removeItem('contato');
+    this.arr_contatos[id].nome = null;
+    this.arr_contatos[id].telefone = null;
+    this.arr_contatos[id].email = null;
+    this.arr_contatos[id].imagem = null;
+    this.saveLocal();
   }
 
   private saveLocal(){
