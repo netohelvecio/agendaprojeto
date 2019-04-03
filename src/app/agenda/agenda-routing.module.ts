@@ -9,7 +9,7 @@ const routes: Routes = [
   {path:'', component: TelaprincipalComponent},
   {path:'cadastro', component: TelacadastroComponent},
   {path:'lista', component: TelalistaComponent},
-  {path:'editar/index', component: TelaeditarComponent} 
+  {path:'editar/:id', component: TelaeditarComponent} 
 ];
 
 @NgModule({

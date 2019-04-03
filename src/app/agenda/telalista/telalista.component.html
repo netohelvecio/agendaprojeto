@@ -2,9 +2,9 @@
   
 
   <div>
-    <app-card *ngFor="let contato of arr_contatos[{{index}}]"
+    <app-card *ngFor="let contato of arr_contatos" (click)="navegarEdicao(contato)"
     [nome]="contato.nome" [telefone]="contato.telefone" [email]="contato.email"
-    [imagem]="contato.imagem" (click)="navegarEdicao(get.contato)"></app-card>
+    [imagem]="contato.imagem" ></app-card>
   </div>
   
 

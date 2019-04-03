@@ -1,6 +1,11 @@
 <app-header class="principal">
 
   <form class="formulario" #cadForm="ngForm" (ngSubmit)="cadastrar(cadForm)">
+    <label for="id">ID:</label>
+    <ion-item>
+      <ion-input type="number" name="id" id="id" placeholder="Digite o ID" [(ngModel)]="contato.id"></ion-input>
+    </ion-item>
+    
     <label for="nome">Nome:</label>
     <ion-item>
       <ion-input type="text" name="nome" id="nome" placeholder="Digite seu nome" [(ngModel)]="contato.nome"></ion-input>

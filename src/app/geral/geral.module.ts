@@ -26,7 +26,7 @@ import { CardComponent } from './card/card.component';
     FormsModule,
     HeaderComponent,
     CardComponent,
-    RouterModule
+    RouterModule,
   ]
 })
 export class GeralModule { }

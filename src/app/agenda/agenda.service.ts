@@ -16,27 +16,44 @@ export class AgendaService {
     return this.arr_contatos;
   }
 
+  getUmContato(posicao): Contato{
+    return this.arr_contatos[posicao];
+  }
+
   salvarContato(contato: Contato){
     this.arr_contatos.push(contato);
     this.saveLocal();
   }
 
-  private saveLocal(){
-    localStorage.setItem('contato',JSON.stringify(this.arr_contatos));
+  editarContato(id, nome, telefone, email){
+    this.arr_contatos[id].nome = nome;
+    this.arr_contatos[id].telefone = telefone;
+    this.arr_contatos[id].email = email;
+    this.saveLocal();
   }
 
-  posContato(index): number{
-    return this.arr_contatos.indexOf(index);
+  excluirContato(id){
+    //this.arr_contatos.splice(id);
+    //console.log(this.arr_contatos);
+    //localStorage.removeItem('contato[0]');
+    //let key = 'contato[' + id + ']';
+    //localStorage.removeItem('contato');
+  }
+
+  private saveLocal(){
+    localStorage.setItem('contato',JSON.stringify(this.arr_contatos));
   }
 }
 
 export class Contato{
+  id: number;
   nome: string;
   telefone: string;
   email: string;
   imagem: string;
 
-  constructor(nome: string, telefone: string, email: string, imagem: string){
+  constructor(id:number, nome: string, telefone: string, email: string, imagem: string){
+    this.id = id;
     this.nome = nome;
     this.telefone = telefone;
     this.email = email;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AgendaService, Contato } from '../agenda.service';
 import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-telalista',
@@ -12,16 +13,16 @@ export class TelalistaComponent implements OnInit {
 
   constructor(
     private agenda: AgendaService,
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit() {
     this.carregarContatos();
   }
 
-  navegarEdicao(){
-    this.router.navigate(['agenda/editar']);
-
+  navegarEdicao(index){
+    this.router.navigate(['agenda/editar', index.id]);
+    //console.log(index.id);
   }
 
   carregarContatos(){
